@@ -1,0 +1,107 @@
+@mixin animated($name:null, $speed:$animations-speed) {
+    @if $name != null {
+        @include animation-name($name);
+        @include animation-speed($speed);
+        @include animation-fill;
+    }
+    @else {
+        @debug("Missing name in animation mixin.");
+    }
+}
+
+/*
+ * Animation
+ */
+@mixin animation($name:null) {
+    @if $name != null {
+        @include animation-name($name);
+        @include keyframes($name) { @content; }
+    }
+    @else {
+        @debug("Missing name in animation mixin.");
+    }
+}
+
+/*
+ *  Name
+ */
+@mixin animation-name($name:null) {
+    @if $name != null {
+        -webkit-animation-name: $name;
+        animation-name: $name;
+        @content;
+    }
+}
+
+/*
+ *  Duration
+ */
+@mixin animation-speed($speed:$animations-speed) {
+    -webkit-animation-duration: $speed;
+    animation-duration: $speed;
+    @content;
+}
+
+/*
+ *  Fill Mode
+ */
+@mixin animation-fill($fill:both) {
+    -webkit-animation-fill-mode: $fill;
+    animation-fill-mode: $fill;
+    @content;
+}
+
+/*
+ *  Infinite (proxy to Iteration Count)
+ */
+@mixin animation-infinite {
+    @include animation-count(infinite) {
+        @content;
+    }
+}
+
+/*
+ *  Iteration Count
+ */
+@mixin animation-count($count:infinite) {
+    -webkit-animation-iteration-count: $count;
+    animation-iteration-count: $count;
+    @content;
+}
+
+/*
+ *  Backface Visiblity
+ */
+@mixin animation-backface($visible: visible !important) {
+    -webkit-animation-backface-visibility: $visible;
+    animation-backface-visibility: $visible;
+    @content;
+}
+
+/*
+ *  Easing Functions
+ */
+@mixin animation-timing($function: ease-in) {
+    -webkit-animation-timing-function: $function;
+    animation-timing-function: $function;
+    @content;
+}
+
+/*
+ *  Rransform Origin
+ */
+@mixin animation-origin($origin: center center) {
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+    @content;
+}
+
+/*
+ *  Keyframe Animations
+ *  (good place to hook in vendor prefix mixin?)
+ */
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+}

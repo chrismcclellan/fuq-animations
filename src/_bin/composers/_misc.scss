@@ -1,0 +1,14 @@
+@mixin _animations-composer-misc($key, $selector) {
+         @if $key == flash            and mixin-exists($key) != null  { #{$selector} { @include flash; }           $found: true; }
+    @else if $key == hinge            and mixin-exists($key) != null  { #{$selector} { @include hinge; }           $found: true; }
+    @else if $key == light-speed-in   and mixin-exists($key) != null  { #{$selector} { @include light-speed-in; }  $found: true; }
+    @else if $key == light-speed-out  and mixin-exists($key) != null  { #{$selector} { @include light-speed-out; } $found: true; }
+    @else if $key == pulse            and mixin-exists($key) != null  { #{$selector} { @include pulse; }           $found: true; }
+    @else if $key == roll-in          and mixin-exists($key) != null  { #{$selector} { @include roll-in; }         $found: true; }
+    @else if $key == roll-out         and mixin-exists($key) != null  { #{$selector} { @include roll-out; }        $found: true; }
+    @else if $key == shake            and mixin-exists($key) != null  { #{$selector} { @include shake; }           $found: true; }
+    @else if $key == swing            and mixin-exists($key) != null  { #{$selector} { @include swing; }           $found: true; }
+    @else if $key == tada             and mixin-exists($key) != null  { #{$selector} { @include tada; }            $found: true; }
+    @else if $key == wiggle           and mixin-exists($key) != null  { #{$selector} { @include wiggle; }          $found: true; }
+    @else if $key == wobble           and mixin-exists($key) != null  { #{$selector} { @include wobble; }          $found: true; }
+}

@@ -1,0 +1,6 @@
+@mixin _animations-composer-slide-out($key, $selector) {
+         @if $key == slide-out-up    and mixin-exists($key) != null  { #{$selector} { @include slide-out-up; }    $found: true; }
+    @else if $key == slide-out-right and mixin-exists($key) != null  { #{$selector} { @include slide-out-right; } $found: true; }
+    @else if $key == slide-out-down  and mixin-exists($key) != null  { #{$selector} { @include slide-out-down; }  $found: true; }
+    @else if $key == slide-out-left  and mixin-exists($key) != null  { #{$selector} { @include slide-out-left; }  $found: true; }
+}

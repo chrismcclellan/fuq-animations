@@ -1,0 +1,47 @@
+@mixin bounce-out {
+    @include animation-timing($animations-speed-bounce-out) {
+        @include animation(bounce-out) {
+            20% { transform: scale3d(.9, .9, .9); }
+            50%, 55% { opacity: 1; transform: scale3d(1.1, 1.1, 1.1); }
+            to { opacity: 0; transform: scale3d(.3, .3, .3); }
+        }
+    }
+}
+
+@mixin bounce-out-up {
+    @include animation-timing($animations-speed-bounce-out) {
+        @include animation(bounce-out-up) {
+            20% { transform: translate3d(0, -10px, 0); }
+            40%, 45% { opacity: 1; transform: translate3d(0, 20px, 0); }
+            to { opacity: 0; transform: translate3d(0, -2000px, 0); }
+        }
+    }
+}
+
+@mixin bounce-out-right {
+    @include animation-timing($animations-speed-bounce-out) {
+        @include animation(bounce-out-right) {
+            20% { opacity: 1; transform: translate3d(-20px, 0, 0); }
+            to { opacity: 0; transform: translate3d(2000px, 0, 0); }
+        }
+    }
+}
+
+@mixin bounce-out-down {
+    @include animation-timing($animations-speed-bounce-out) {
+        @include animation(bounce-out-down) {
+            20% { transform: translate3d(0, 10px, 0); }
+            40%, 45% { opacity: 1; transform: translate3d(0, -20px, 0); }
+            to { opacity: 0; transform: translate3d(0, 2000px, 0); }
+        }
+    }
+}
+
+@mixin bounce-out-left {
+    @include animation-timing($animations-speed-bounce-out) {
+        @include animation(bounce-out-left) {
+            20% { opacity: 1; transform: translate3d(20px, 0, 0); }
+            to { opacity: 0; transform: translate3d(-2000px, 0, 0); }
+        }
+    }
+}

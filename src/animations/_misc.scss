@@ -1,0 +1,146 @@
+@mixin flash {
+    @include animation(flash) {
+        0%, 50%, 100% { opacity: 1; } 
+        25%, 75% { opacity: 0; }
+    }
+}
+
+@mixin hinge {
+    @include animation-timing($animations-speed-hinge) {
+        @include animation(hinge) {
+            0% { transform-origin: top left; animation-timing-function: ease-in-out; }
+            20%, 60% { transform: rotate3d(0, 0, 1, 80deg); transform-origin: top left; animation-timing-function: ease-in-out; }
+            40%, 80% { transform: rotate3d(0, 0, 1, 60deg); transform-origin: top left; animation-timing-function: ease-in-out; opacity: 1; }
+            to { transform: translate3d(0, 700px, 0); opacity: 0; }
+        }
+    }
+}
+
+@mixin light-speed-in {
+    @include animation-timing(ease-in) {
+        @include animation(light-speed-in) {
+            from { transform: translate3d(100%, 0, 0) skewX(-30deg); opacity: 0; }
+            60% { transform: skewX(20deg); opacity: 1; }
+            80% { transform: skewX(-5deg); opacity: 1; }
+            to { transform: none; opacity: 1; }
+        }
+    }
+}
+
+@mixin light-speed-out {
+    @include animation-timing(ease-out) {
+        @include animation(light-speed-out) {
+            from { opacity: 1; }
+            to { transform: translate3d(100%, 0, 0) skewX(30deg); opacity: 0; }
+        }
+    }
+}
+
+@mixin pulse {
+    @include animation(pulse) {
+        from { transform: scale3d(1, 1, 1); }
+        50% { transform: scale3d(1.05, 1.05, 1.05); }
+        to { transform: scale3d(1, 1, 1); }
+    }
+}
+
+@mixin roll-in {
+    @include animation(roll-in) {
+        from { opacity: 0; transform: translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin roll-out {
+    @include animation(roll-out) {
+        from { opacity: 1; }
+        to { opacity: 0; transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg); }
+    }
+}
+
+@mixin shake {
+    @include animation(shake) {
+        from, to { transform: translate3d(0, 0, 0); }
+        10%, 30%, 50%, 70%, 90% { transform: translate3d(-10px, 0, 0); }
+        20%, 40%, 60%, 80% { transform: translate3d(10px, 0, 0); }
+    }
+}
+
+@mixin head-shake {
+    @include animation-timing(ease-in-out) {
+        @include animation(head-shake) {
+            0% { transform: translateX(0); }
+            6.5% { transform: translateX(-6px) rotateY(-9deg); }
+            18.5% { transform: translateX(5px) rotateY(7deg); }
+            31.5% { transform: translateX(-3px) rotateY(-5deg); }
+            43.5% { transform: translateX(2px) rotateY(3deg); }
+            50% { transform: translateX(0); }
+        }
+    }
+}
+
+@mixin swing {
+    @include animation-origin(top center) {
+        @include animation(swing) {
+            20% { transform: rotate3d(0, 0, 1, 15deg); }
+            40% { transform: rotate3d(0, 0, 1, -10deg); }
+            60% { transform: rotate3d(0, 0, 1, 5deg); }
+            80% { transform: rotate3d(0, 0, 1, -5deg); }
+            to { transform: rotate3d(0, 0, 1, 0deg); }
+        }
+    }
+}
+
+@mixin tada {
+    @include animation(tada) {
+        from { transform: scale3d(1, 1, 1); }
+        10%, 20% { transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg); }
+        30%, 50%, 70%, 90% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+        40%, 60%, 80% { transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+        to { transform: scale3d(1, 1, 1); }
+    }
+}
+
+@mixin wiggle {
+    @include animation-timing(ease-in) {
+        @include animation(wiggle) {
+            0%   { transform: skewX(9deg); }
+            10%  { transform: skewX(-8deg); }
+            20%  { transform: skewX(7deg); }
+            30%  { transform: skewX(-6deg); }
+            40%  { transform: skewX(5deg); }
+            50%  { transform: skewX(-4deg); }
+            60%  { transform: skewX(3deg); }
+            70%  { transform: skewX(-2deg); }
+            80%  { transform: skewX(1deg); }
+            90%  { transform: skewX(0deg); }
+            100% { transform: skewX(0deg); }
+        }
+    }
+}
+
+@mixin wobble {
+    @include animation(wobble) {
+        from { transform: none; }
+        15% { transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg); }
+        30% { transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg); }
+        45% { transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg); }
+        60% { transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg); }
+        75% { transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg); }
+        to { transform: none; }
+    }
+}
+
+@mixin jello {
+    @include animation-origin(center) {
+        @include animation(jello) {
+            from { transform: none; }
+            15% { transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg); }
+            30% { transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg); }
+            45% { transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg); }
+            60% { transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg); }
+            75% { transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg); }
+            to { transform: none; }
+        }
+    }
+}

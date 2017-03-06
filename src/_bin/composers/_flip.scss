@@ -1,0 +1,7 @@
+@mixin _animations-composer-flip($key, $selector) {
+             @if $key == flip        and mixin-exists($key) != null  { #{$selector} { @include flip; }       $found: true; }
+        @else if $key == flip-in-x   and mixin-exists($key) != null  { #{$selector} { @include flip-in-x; }  $found: true; }
+        @else if $key == flip-in-y   and mixin-exists($key) != null  { #{$selector} { @include flip-in-y; }  $found: true; }
+        @else if $key == flip-out-x  and mixin-exists($key) != null  { #{$selector} { @include flip-out-x; } $found: true; }
+        @else if $key == flip-out-y  and mixin-exists($key) != null  { #{$selector} { @include flip-out-y; } $found: true; }
+}

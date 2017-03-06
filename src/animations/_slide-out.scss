@@ -1,0 +1,27 @@
+@mixin slide-out-up {
+    @include animation(slide-out-up) {
+        from { transform: translate3d(0, 0, 0); }
+        to { visibility: hidden; transform: translate3d(0, -100%, 0); }
+    }
+}
+
+@mixin slide-out-right {
+    @include animation(slide-out-right) {
+        from { transform: translate3d(0, 0, 0); }
+        to { visibility: hidden; transform: translate3d(100%, 0, 0); }
+    }
+}
+
+@mixin slide-out-down {
+    @include animation(slide-out-down) {
+        from { transform: translate3d(0, 0, 0); }
+        to { visibility: hidden; transform: translate3d(0, 100%, 0); }
+    }
+}
+
+@mixin slide-out-left {
+    @include animation(slide-out-left) {
+        from { transform: translate3d(0, 0, 0); }
+        to { visibility: hidden; transform: translate3d(-100%, 0, 0); }
+    }
+}

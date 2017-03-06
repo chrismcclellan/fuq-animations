@@ -1,0 +1,36 @@
+// bounce-out-down
+@function isSlugify($ouput) {
+    @return if( index($output, slugify) != null, true, false);
+}
+
+// bounceOutDown
+@function isCamelize($ouput) {
+    @return if( index($output, camelize) != null, true, false);
+}
+
+
+// .animated.bounceOutUp,
+// .animated.bounce-out-up {}
+@function buildSelectors($prefix, $key, $slug:false, $camel:false) {
+
+    $selector: false;
+
+    @if $camel != false {
+        $camelized: camelize($key);
+        $selector: '.#{$prefix}.#{$camelized}';
+    }
+
+    @if $slug != false {
+        $slug: '.#{$prefix}.#{$key}';
+
+        @if $selector != false {
+            $selector: '#{$selector}, #{$slug}';
+        } @else {
+            $selector: $slug;
+        }
+    }
+
+    @debug($selector);
+
+    @return $selector;
+}

@@ -1,0 +1,21 @@
+{
+  "name": "fuq-animations",
+  "version": "1.0.0",
+  "description": "Fuq Animations - A customizable Sass animations library riddled with mixins.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "watch": "grunt compass:watch",
+    "build": "grunt compass:build",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrismcclellan/fuq-animations.git"
+  },
+  "keywords": ["sass", "animations", "css3", "animate.css", "animate", "scss", "mixin", "mixins"],
+  "author": "Chris McClellan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chrismcclellan/fuq-animations/issues"
+  },
+  "homepage": "https://github.com/chrismcclellan/fuq-animations#readme"
+}

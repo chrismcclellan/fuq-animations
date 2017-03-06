@@ -1,0 +1,7 @@
+@mixin _animations-composer-rotate-out($key, $selector) {
+         @if $key == rotate-out             and mixin-exists($key) != null  { #{$selector} { @include rotate-out; }            $found: true; }
+    @else if $key == rotate-out-down-left   and mixin-exists($key) != null  { #{$selector} { @include rotate-out-down-left; }  $found: true; }
+    @else if $key == rotate-out-down-right  and mixin-exists($key) != null  { #{$selector} { @include rotate-out-down-right; } $found: true; }
+    @else if $key == rotate-out-up-left     and mixin-exists($key) != null  { #{$selector} { @include rotate-out-up-left; }    $found: true; }
+    @else if $key == rotate-out-up-right    and mixin-exists($key) != null  { #{$selector} { @include rotate-out-up-right; }   $found: true; }
+}

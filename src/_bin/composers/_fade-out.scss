@@ -1,0 +1,11 @@
+@mixin _animations-composer-fade-out($key, $selector) {
+             @if $key == fade-out            and mixin-exists($key) != null  { #{$selector} { @include fade-out; }           $found: true; }
+        @else if $key == fade-out-up         and mixin-exists($key) != null  { #{$selector} { @include fade-out-up; }        $found: true; }
+        @else if $key == fade-out-up-big     and mixin-exists($key) != null  { #{$selector} { @include fade-out-up-big; }    $found: true; }
+        @else if $key == fade-out-right      and mixin-exists($key) != null  { #{$selector} { @include fade-out-right; }     $found: true; }
+        @else if $key == fade-out-right-big  and mixin-exists($key) != null  { #{$selector} { @include fade-out-right-big; } $found: true; }
+        @else if $key == fade-out-down       and mixin-exists($key) != null  { #{$selector} { @include fade-out-down; }      $found: true; }
+        @else if $key == fade-out-down-big   and mixin-exists($key) != null  { #{$selector} { @include fade-out-down-big; }  $found: true; }
+        @else if $key == fade-out-left       and mixin-exists($key) != null  { #{$selector} { @include fade-out-left; }      $found: true; }
+        @else if $key == fade-out-left-big   and mixin-exists($key) != null  { #{$selector} { @include fade-out-left-big; }  $found: true; }
+}

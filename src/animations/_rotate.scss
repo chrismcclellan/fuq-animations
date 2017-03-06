@@ -1,0 +1,70 @@
+
+@mixin rotate-in {
+    @include animation(rotate-in) {
+        from { transform-origin: center; transform: rotate3d(0, 0, 1, -200deg); opacity: 0; }
+        to { transform-origin: center; transform: none; opacity: 1; }
+    }
+}
+
+@mixin rotate-in-down-left {
+    @include animation(rotate-in-down-left) {
+        from { transform-origin: left bottom; transform: rotate3d(0, 0, 1, -45deg); opacity: 0; }
+        to { transform-origin: left bottom; transform: none; opacity: 1; }
+    }
+}
+
+@mixin rotate-in-down-right {
+    @include animation(rotate-in-down-right) {
+        from { transform-origin: right bottom; transform: rotate3d(0, 0, 1, 45deg); opacity: 0; }
+        to { transform-origin: right bottom; transform: none; opacity: 1; }
+    }
+}
+
+@mixin rotate-in-up-left {
+    @include animation(rotate-in-up-left) {
+        from { transform-origin: left bottom; transform: rotate3d(0, 0, 1, 45deg); opacity: 0; }
+        to { transform-origin: left bottom; transform: none; opacity: 1; }
+    }
+}
+
+@mixin rotate-in-up-right {
+    @include animation(rotate-in-up-right) {
+        from { transform-origin: right bottom; transform: rotate3d(0, 0, 1, -90deg); opacity: 0; }
+        to { transform-origin: right bottom; transform: none; opacity: 1; }
+    }
+}
+
+@mixin rotate-out {
+    @include animation(rotate-out) {
+        from { transform-origin: center; opacity: 1; }
+        to { transform-origin: center; transform: rotate3d(0, 0, 1, 200deg); opacity: 0; }
+    }
+}
+
+@mixin rotate-out-down-left {
+    @include animation(rotate-out-down-left) {
+        from { transform-origin: left bottom; opacity: 1; }
+        to { transform-origin: left bottom; transform: rotate3d(0, 0, 1, 45deg); opacity: 0; }
+    }
+}
+
+@mixin rotate-out-down-right {
+    @include animation(rotate-out-down-right) {
+        from { transform-origin: right bottom; opacity: 1; }
+        to { transform-origin: right bottom; transform: rotate3d(0, 0, 1, -45deg); opacity: 0; }
+    }
+}
+
+@mixin rotate-out-up-left {
+    @include animation(rotate-out-up-left) {
+        from { transform-origin: left bottom; opacity: 1; }
+        to { transform-origin: left bottom; transform: rotate3d(0, 0, 1, -45deg); opacity: 0; }
+    }
+}
+
+@mixin rotate-out-up-right {
+    @include animation(rotate-out-up-right) {
+        from { transform-origin: right bottom; opacity: 1; }
+        to { transform-origin: right bottom; transform: rotate3d(0, 0, 1, 90deg); opacity: 0; }
+    }
+}

@@ -1,0 +1,56 @@
+$animations-base-selector: animated !default;
+
+@import "composers/bounce-in";
+@import "composers/bounce-out";
+@import "composers/fade-in";
+@import "composers/fade-out";
+@import "composers/rotate-in";
+@import "composers/rotate-out";
+@import "composers/slide-in";
+@import "composers/slide-out";
+@import "composers/flip";
+@import "composers/misc";
+
+/**
+ *  Output selectors based on
+ *  Enabled animations in configs
+ */
+@mixin animations-compose($formats:false) {
+
+    @if $formats != false and length($animations-configs) > 0 {
+
+        body { -webkit-backface-visibility: hidden; }
+
+        $base: $animations-base-selector;
+        $camel: if (index($formats, camel) != null, true, false);
+        $slug:  if ($camel == false or index($formats, slugify) != null, true, false);
+
+        .#{$base} { @include animated; }
+        .#{$base}.infinite { @include animation-infinite; }
+
+        @each $key in $animations-configs {
+
+            @if $key != extras {
+
+                $selectors: buildSelectors($base, $key, $slug, $camel);
+
+                @debug("Looking up mixin and css rule for #{$key}");
+
+                // Find the config key and matching mixin to build css
+                $found: null;
+                @if $found == null { @include _animations-composer-bounce-in  ($key, $selectors); }
+                @if $found == null { @include _animations-composer-bounce-out ($key, $selectors); }
+                @if $found == null { @include _animations-composer-slide-in   ($key, $selectors); }
+                @if $found == null { @include _animations-composer-slide-out  ($key, $selectors); }
+                @if $found == null { @include _animations-composer-fade-in    ($key, $selectors); }
+                @if $found == null { @include _animations-composer-fade-out   ($key, $selectors); }
+                @if $found == null { @include _animations-composer-rotate-in  ($key, $selectors); }
+                @if $found == null { @include _animations-composer-rotate-out ($key, $selectors); }
+                @if $found == null { @include _animations-composer-flip       ($key, $selectors); }
+                @if $found == null { @include _animations-composer-misc       ($key, $selectors); }
+            }
+        }
+    }
+}
+
+ 

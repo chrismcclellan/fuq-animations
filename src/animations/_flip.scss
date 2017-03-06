@@ -1,0 +1,59 @@
+@mixin flip {
+    @include animation-backface(visible !important) {
+        @include animation(flip) {
+            from { transform: perspective(400px) rotate3d(0, 1, 0, -360deg); animation-timing-function: ease-out; }
+            40% { transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg); animation-timing-function: ease-out; }
+            50% { transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg); animation-timing-function: ease-in; }
+            80% { transform: perspective(400px) scale3d(.95, .95, .95); animation-timing-function: ease-in; }
+            to { transform: perspective(400px); animation-timing-function: ease-in; }
+        }
+    }
+}
+
+@mixin flip-in-x {
+    @include animation-backface(visible !important) {
+        @include animation(flip-in-x) {
+            from { transform: perspective(400px) rotate3d(1, 0, 0, 90deg); animation-timing-function: ease-in; opacity: 0; }
+            40% { transform: perspective(400px) rotate3d(1, 0, 0, -20deg); animation-timing-function: ease-in; }
+            60% { transform: perspective(400px) rotate3d(1, 0, 0, 10deg); opacity: 1; }
+            80% { transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+            to { transform: perspective(400px); }
+        }
+    }
+}
+
+@mixin flip-in-y {
+    @include animation-backface(visible !important) {
+        @include animation(flip-in-y) {
+            from { transform: perspective(400px) rotate3d(0, 1, 0, 90deg); animation-timing-function: ease-in; opacity: 0; }
+            40% { transform: perspective(400px) rotate3d(0, 1, 0, -20deg); animation-timing-function: ease-in; }
+            60% { transform: perspective(400px) rotate3d(0, 1, 0, 10deg); opacity: 1; }
+            80% { transform: perspective(400px) rotate3d(0, 1, 0, -5deg); }
+            to { transform: perspective(400px); }
+        }
+    }
+}
+
+@mixin flip-out-x {
+    @include animation-timing($animations-speed-flip-out-x) {
+        @include animation-backface(visible !important) {
+            @include animation(flip-out-x) {
+                from { transform: perspective(400px); }
+                30% { transform: perspective(400px) rotate3d(1, 0, 0, -20deg); opacity: 1; }
+                to { transform: perspective(400px) rotate3d(1, 0, 0, 90deg); opacity: 0; }
+            }
+        }
+    }
+}
+
+@mixin flip-out-y {
+    @include animation-timing($animations-speed-flip-out-y) {
+        @include animation-backface(visible !important) {
+            @include animation(flip-out-y) {
+                from { transform: perspective(400px); }
+                30% { transform: perspective(400px) rotate3d(0, 1, 0, -15deg); opacity: 1; }
+                to { transform: perspective(400px) rotate3d(0, 1, 0, 90deg); opacity: 0; }
+            }
+        }
+    }
+}

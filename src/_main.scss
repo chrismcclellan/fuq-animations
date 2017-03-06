@@ -1,0 +1,22 @@
+// Animation configs
+@import "configs";
+
+// Animation helpers
+@import "_bin/main";
+
+// Animation mixins
+@import
+    "animations/bounce-in",
+    "animations/bounce-out",
+    "animations/fade-in",
+    "animations/fade-out",
+    "animations/flip",
+    "animations/misc",
+    "animations/rotate",
+    "animations/slide-in",
+    "animations/slide-out";
+
+// @import "animations/extras/extras";
+
+@include animations-compose($animations-format);
+

@@ -1,0 +1,8 @@
+@mixin _animations-composer-bounce-in($key, $selector) {
+         @if $key == bounce           and mixin-exists($key) != null  { #{$selector} { @include bounce; }           $found: true}
+    @else if $key == bounce-in        and mixin-exists($key) != null  { #{$selector} { @include bounce-in; }        $found: true}
+    @else if $key == bounce-in-up     and mixin-exists($key) != null  { #{$selector} { @include bounce-in-up; }     $found: true}
+    @else if $key == bounce-in-right  and mixin-exists($key) != null  { #{$selector} { @include bounce-in-right; }  $found: true}
+    @else if $key == bounce-in-down   and mixin-exists($key) != null  { #{$selector} { @include bounce-in-down; }   $found: true}
+    @else if $key == bounce-in-left   and mixin-exists($key) != null  { #{$selector} { @include bounce-in-left; }   $found: true}
+}

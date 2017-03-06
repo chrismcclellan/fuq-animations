@@ -1,0 +1,62 @@
+@mixin fade-in {
+    @include animation(fade-in) {
+        0%   { opacity: 0; }    
+        100% { opacity: 1; }
+    }
+}
+
+@mixin fade-in-up {
+    @include animation(fade-in-up) {
+        from { opacity: 0; transform: translate3d(0, 100%, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin fade-in-up-big {
+    @include animation(fade-in-up-big) {
+        from { opacity: 0; transform: translate3d(0, 2000px, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin fade-in-right {
+    @include animation(fade-in-right) {
+        from { opacity: 0; transform: translate3d(100%, 0, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin fade-in-right-big {
+    @include animation(fade-in-right-big) {
+        from { opacity: 0; transform: translate3d(2000px, 0, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin fade-in-down {
+    @include animation(fade-in-down) {
+        from { opacity: 0; transform: translate3d(0, -100%, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin fade-in-down-big {
+    @include animation(fade-in-down-big) {
+        from { opacity: 0; transform: translate3d(0, -2000px, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin fade-in-left {
+    @include animation(fade-in-left) {
+        from { opacity: 0; transform: translate3d(-100%, 0, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
+
+@mixin fade-in-left-big {
+    @include animation(fade-in-left-big) {
+        from { opacity: 0; transform: translate3d(-2000px, 0, 0); }
+        to { opacity: 1; transform: none; }
+    }
+}
